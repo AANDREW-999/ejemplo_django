@@ -1,0 +1,198 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Django — Guía Rápida{% endblock %}
+
+{% block content %}
+	<!-- Hero -->
+	<section class="position-relative overflow-hidden rounded-4 p-5 mb-5 hero-gradient neon-shadow text-center reveal">
+		<h1 class="display-5 fw-bold neon-text">Django: rápido, seguro y escalable</h1>
+		<p class="lead mt-3 text-secondary-300">
+			Un framework web de alto nivel para Python que promueve el desarrollo limpio y pragmático.
+		</p>
+		<div class="mt-4 d-flex gap-3 justify-content-center flex-wrap">
+			<a class="btn btn-neon btn-lg" href="#que-es">Empezar</a>
+			<a class="btn btn-outline-light btn-lg neon-border" href="https://www.djangoproject.com/" target="_blank" rel="noopener">Página oficial</a>
+		</div>
+	</section>
+
+	<!-- ¿Qué es Django? -->
+	<section id="que-es" class="section reveal">
+		<div class="row g-4 align-items-center">
+			<div class="col-lg-6">
+				<h2 class="section-title">¿Qué es Django?</h2>
+				<p>
+					Django es un framework web open‑source para <strong>Python</strong> que facilita la creación de
+					aplicaciones robustas en menos tiempo y con menos código. Sigue el patrón <strong>MVT (Model‑View‑Template)</strong>,
+					integra ORM, sistema de rutas, plantillas, seguridad y administración, todo listo para usar.
+				</p>
+			</div>
+			<div class="col-lg-6">
+				<div class="p-4 rounded-4 glass neon-border">
+					<ul class="list-unstyled m-0">
+						<li class="mb-2">• Rápido por diseño</li>
+						<li class="mb-2">• Seguridad incorporada</li>
+						<li class="mb-2">• Escalable y modular</li>
+						<li class="mb-0">• Gran comunidad y ecosistema</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Función de Django -->
+	<section id="funcion" class="section reveal">
+		<h2 class="section-title">Función de Django</h2>
+		<div class="row g-4">
+			<div class="col-md-6">
+				<div class="card neon-card h-100">
+					<div class="card-body">
+						<h5 class="card-title">Back‑end productivo</h5>
+						<p class="card-text">Provee ORM, migraciones, autenticación, sesiones, formularios y administración para construir APIs y sitios rápidamente.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6">
+				<div class="card neon-card h-100">
+					<div class="card-body">
+						<h5 class="card-title">Arquitectura limpia</h5>
+						<p class="card-text">Separa datos, lógica y presentación con MVT, favoreciendo pruebas, mantenibilidad y escalabilidad.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Estructura Django -->
+	<section id="estructura" class="section reveal">
+		<h2 class="section-title">Estructura Django</h2>
+		<div class="row g-4">
+			<div class="col-lg-7">
+				<pre class="code-block neon-border">
+manage.py
+myproject/
+	__init__.py
+	settings.py
+	urls.py
+	wsgi.py
+app/
+	migrations/
+	models.py   # Modelos (datos)
+	views.py    # Vistas (lógica)
+	urls.py     # Rutas
+	templates/  # Plantillas (UI)
+	static/     # Recursos estáticos
+				</pre>
+			</div>
+			<div class="col-lg-5">
+				<div class="p-4 rounded-4 glass">
+					<h5 class="mb-3">MVT en breve</h5>
+					<ul class="small text-secondary-300">
+						<li><strong>Model:</strong> define y consulta datos con el ORM.</li>
+						<li><strong>View:</strong> contiene la lógica que responde a la petición.</li>
+						<li><strong>Template:</strong> renderiza HTML a partir del contexto.</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Ventajas -->
+	<section id="ventajas" class="section reveal">
+		<h2 class="section-title">Ventajas</h2>
+		<div class="row g-4">
+			<div class="col-md-6 col-lg-4">
+				<div class="card neon-card h-100">
+					<div class="card-body">
+						<h5 class="card-title">Productividad</h5>
+						<p class="card-text">Estructura lista, admin automático y gran ecosistema de paquetes.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 col-lg-4">
+				<div class="card neon-card h-100">
+					<div class="card-body">
+						<h5 class="card-title">Seguridad</h5>
+						<p class="card-text">Protecciones contra XSS, CSRF, SQL Injection y gestión de contraseñas.</p>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-6 col-lg-4">
+				<div class="card neon-card h-100">
+					<div class="card-body">
+						<h5 class="card-title">Escalabilidad</h5>
+						<p class="card-text">Caché, middlewares y soporte asíncrono con ASGI para alto tráfico.</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Desventajas -->
+	<section id="desventajas" class="section reveal">
+		<h2 class="section-title">Desventajas</h2>
+		<ul class="list-group list-group-flush glass neon-border">
+			<li class="list-group-item bg-transparent text-light">Curva de aprendizaje inicial para entender su estructura.</li>
+			<li class="list-group-item bg-transparent text-light">Puede ser pesado para micro‑servicios muy pequeños.</li>
+			<li class="list-group-item bg-transparent text-light">El ORM puede limitar consultas SQL muy complejas (aunque permite SQL crudo).</li>
+		</ul>
+	</section>
+
+	<!-- Ejemplos (Empresas que usan Django) -->
+	<section id="ejemplos" class="section reveal">
+		<h2 class="section-title">Empresas que usan Django</h2>
+		<div class="row g-4">
+			<!-- Fila 1: 3 columnas -->
+			<div class="col-12 col-md-4 col-lg-4">
+				<a href="https://www.instagram.com/" target="_blank" rel="noopener" class="brand-tile neon-border" aria-label="Ir a Instagram">
+					<img src="{% static 'img/instagram.png' %}" alt="Instagram" class="img-fluid" />
+				</a>
+			</div>
+			<div class="col-12 col-md-4 col-lg-4">
+				<a href="https://www.mozilla.org/" target="_blank" rel="noopener" class="brand-tile neon-border" aria-label="Ir a Mozilla">
+					<img src="{% static 'img/Mozilla.png' %}" alt="Mozilla" class="img-fluid" />
+				</a>
+			</div>
+			<div class="col-12 col-md-4 col-lg-4">
+				<a href="https://www.nasa.gov/" target="_blank" rel="noopener" class="brand-tile neon-border" aria-label="Ir a NASA">
+					<img src="{% static 'img/nasa.png' %}" alt="NASA" class="img-fluid" />
+				</a>
+			</div>
+
+			<!-- Fila 2: 3 columnas -->
+			<div class="col-12 col-md-4 col-lg-4">
+				<a href="https://www.pinterest.com/" target="_blank" rel="noopener" class="brand-tile neon-border" aria-label="Ir a Pinterest">
+					<img src="{% static 'img/pinterest.png' %}" alt="Pinterest" class="img-fluid" />
+				</a>
+			</div>
+			<div class="col-12 col-md-4 col-lg-4">
+				<a href="https://disqus.com/" target="_blank" rel="noopener" class="brand-tile neon-border" aria-label="Ir a Disqus">
+					<img src="{% static 'img/Disqus.png' %}" alt="Disqus" class="img-fluid" />
+				</a>
+			</div>
+			<div class="col-12 col-md-4 col-lg-4">
+				<a href="https://www.washingtonpost.com/" target="_blank" rel="noopener" class="brand-tile neon-border" aria-label="Ir a The Washington Post">
+					<img src="{% static 'img/The Washington Post.png' %}" alt="The Washington Post" class="img-fluid" />
+				</a>
+			</div>
+		</div>
+	</section>
+
+	<!-- Videos -->
+	<section id="videos" class="section reveal">
+		<h2 class="section-title">Videos</h2>
+		<div class="row g-4">
+			<div class="col-lg-6">
+				<div class="ratio ratio-16x9 neon-border rounded-4 overflow-hidden">
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/srkMntDfil4?si=OKl_y5UzX81XaSWI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="ratio ratio-16x9 neon-border rounded-4 overflow-hidden">
+					<iframe width="560" height="315" src="https://www.youtube.com/embed/B8OlRdYwNlA?si=lT-i2tWtI5NamSgi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock %}
+
