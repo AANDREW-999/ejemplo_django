@@ -18,7 +18,7 @@ body{
 }
 a{color:var(--gold);text-decoration:none;}
 a:hover{text-decoration:underline;}
-.site-header{position:sticky;top:0;z-index:50;backdrop-filter:blur(8px);-webkit-backdrop-filter: blur(8px);}
+.site-header{position:sticky;top:0;z-index:50;-webkit-backdrop-filter: blur(8px);backdrop-filter:blur(8px);}
 .top-strip{height:6px;background:linear-gradient(90deg,var(--grana),var(--gold),var(--blau));}
 .nav-wrapper{
   display:flex;align-items:center;justify-content:space-between;
@@ -47,8 +47,8 @@ a:hover{text-decoration:underline;}
 .nav-toggle:hover{background:var(--gold);color:var(--dark);}
 .main-content{width:100%;max-width:1180px;margin:1.5rem auto;padding:0 1.25rem 3rem;flex:1;}
 .main-content > *{
-  background:rgba(255,255,255,.06);backdrop-filter:blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  background:rgba(255,255,255,.06);-webkit-backdrop-filter: blur(6px);
+  backdrop-filter:blur(6px);
   padding:1.25rem 1.35rem;border:1px solid rgba(255,255,255,.08);
   border-radius:var(--radius);box-shadow:var(--shadow);
 }
