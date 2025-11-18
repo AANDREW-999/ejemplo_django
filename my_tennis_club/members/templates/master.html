@@ -1,0 +1,82 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Club Members{% endblock %}</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Barlow+Condensed:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="{% static 'img/escudo.png' %}">
+  <link rel="stylesheet" href="{% static 'css/barca.css' %}">
+  <style>
+    body{font-family:'Montserrat',"Segoe UI",Roboto,Arial,sans-serif}
+    h1,h2,h3,h4,h5,h6,.brand-text{font-family:'Barlow Condensed','Montserrat',sans-serif}
+  </style>
+</head>
+<body>
+<header class="site-header">
+  <div class="top-strip"></div>
+  <div class="nav-wrapper">
+    <a class="logo" href="{% url 'members' %}">
+      <img src="{% static 'img/escudo.png' %}" alt="FC Barcelona" onerror="this.style.display='none'">
+      <span class="brand-text">Club Members</span>
+    </a>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="{% url 'members' %}">Inicio</a></li>
+        <li><a href="#">Noticias</a></li>
+        <li><a href="#">Mi Perfil</a></li>
+        <li><a href="#">Miembros</a></li>
+        <li><a href="#">Contacto</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" aria-label="Menú">&#9776;</button>
+  </div>
+</header>
+<main class="main-content">
+  {% block content %}{% endblock %}
+</main>
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <h4>Club</h4>
+      <ul>
+        <li><a href="#">Historia</a></li>
+        <li><a href="#">Valores</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Miembros</h4>
+      <ul>
+        <li><a href="#">Beneficios</a></li>
+        <li><a href="#">Eventos</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Síguenos</h4>
+      <div class="social">
+        <a href="https://x.com/FCBarcelona" target="_blank" rel="noopener" aria-label="X (Twitter)">X</a>
+        <a href="https://www.instagram.com/fcbarcelona/" target="_blank" rel="noopener" aria-label="Instagram">IG</a>
+        <a href="https://www.facebook.com/fcbarcelona" target="_blank" rel="noopener" aria-label="Facebook">FB</a>
+      </div>
+    </div>
+  </div>
+  <div class="legal">
+    <small>&copy; {{ now|date:"Y" }} Club. Todos los derechos reservados.</small>
+  </div>
+</footer>
+<button class="scroll-top" aria-label="Subir">▲</button>
+<script>
+const toggle=document.querySelector('.nav-toggle');
+const nav=document.querySelector('.main-nav');
+toggle.addEventListener('click',()=>nav.classList.toggle('open'));
+const st=document.querySelector('.scroll-top');
+window.addEventListener('scroll',()=> {
+  if(window.scrollY>160){st.classList.add('show');}else{st.classList.remove('show');}
+});
+st.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+</script>
+</body>
+</html>
