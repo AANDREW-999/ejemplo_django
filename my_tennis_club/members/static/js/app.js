@@ -82,4 +82,3 @@ if (!document.getElementById('skipLink')) {
 	skip.addEventListener('blur', () => skip.style.top = '-40px');
 	document.body.appendChild(skip);
 }
-
