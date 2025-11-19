@@ -6,8 +6,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>{% block title %}Django Neon{% endblock %}</title>
 
-		<!-- Favicon -->
-		<link rel="icon" type="image/svg+xml" href="{% static 'img/logo.svg' %}">
+		<!-- Favicon solo Django con cache-bust -->
+		<link rel="icon" type="image/svg+xml" href="{% static 'img/logo.svg' %}?v=1">
+		<link rel="shortcut icon" href="{% static 'img/logo.svg' %}?v=1" type="image/svg+xml">
+		<link rel="icon" type="image/png" sizes="32x32" href="{% static 'img/logo.svg' %}?v=1">
 		<meta name="theme-color" content="#092E20" />
 
 		<!-- Bootstrap 5 -->

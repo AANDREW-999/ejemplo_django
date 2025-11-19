@@ -3,7 +3,6 @@
 {% block title %}Miembros del Club{% endblock %}
 
 {% block content %}
-  <span class="motto">Més que un club</span>
   <h1>Miembros</h1>
   <ul>
     {% for x in mymembers %}
@@ -11,5 +10,8 @@
     {% empty %}
       <li>No hay miembros registrados.</li>
     {% endfor %}
+    <div style="text-align:center;">
+    <span class="motto motto-large"><span class="motto-text">MÉS QUE UN CLUB.</span> <span class="emoji-group" aria-label="Emojis del club">❤️💙🏆✨</span></span>
+  </div>
   </ul>
 {% endblock %}

@@ -31,7 +31,7 @@ a:hover{text-decoration:underline;}
 .logo img{height:40px;width:auto;filter:drop-shadow(0 2px 4px rgba(0,0,0,.5));}
 .brand-text{
   letter-spacing:.5px;
-  font-size:1.15rem;
+  font-size:1.35rem; /* aumentado */
 }
 .main-nav ul{list-style:none;display:flex;gap:1.1rem;margin: 0;padding: 0;}
 .main-nav a{
@@ -59,7 +59,7 @@ a:hover{text-decoration:underline;}
 }
 .site-footer{
   background:linear-gradient(180deg,rgba(10,10,15,.85),rgba(10,10,15,.95));
-  margin-top:auto;padding:2.2rem 1.4rem 1rem;font-size:.85rem;
+  margin-top:auto;padding:2.2rem 1.4rem 1rem;font-size:.95rem; /* aumentado */
 }
 .footer-grid{
   display:grid;gap:2rem;
@@ -89,6 +89,7 @@ a:hover{text-decoration:underline;}
   box-shadow:0 6px 14px -4px rgba(0,0,0,.6);
 }
 .legal{text-align:center;padding-top:1rem;border-top:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.6);}
+.legal small{font-size:.85rem;letter-spacing:.4px;}
 .scroll-top{
   position:fixed;bottom:22px;right:22px;background:var(--gold);color:var(--dark);
   border:none;padding:.6rem .75rem;font-weight:700;border-radius:var(--radius);
@@ -105,12 +106,16 @@ h3{font-size:1.55rem;}
   font-size:2rem;
   font-weight:700;
   letter-spacing:1px;
-  background:linear-gradient(90deg,var(--gold),var(--grana));
-  -webkit-background-clip:text;
-  color:transparent;
   display:inline-block;
   margin:.75rem 0 1.25rem;
 }
+.motto-text{
+  background:linear-gradient(90deg,var(--gold),var(--grana));
+  -webkit-background-clip:text;
+  color:transparent;
+}
+.emoji-group{display:inline-block;font-size:1em;vertical-align:middle;color:inherit;}
+.motto-large{font-size:2.6rem;}
 @media (max-width:880px){
   .main-nav ul{flex-direction:column;gap:.35rem;}
   .main-nav{
@@ -123,6 +128,7 @@ h3{font-size:1.55rem;}
   h1{font-size:2.1rem;}
   h2{font-size:1.75rem;}
   .motto{font-size:1.7rem;}
+  .motto-large{font-size:2.2rem;}
 }
 @media (prefers-color-scheme:light){
   body{background:linear-gradient(135deg,var(--light) 0%,#d9e1e8 100%);color:#222;}

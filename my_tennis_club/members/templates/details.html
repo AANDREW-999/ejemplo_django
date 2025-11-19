@@ -7,12 +7,12 @@
 
 {% block content %}
   <h1>{{ mymember.firstname }} {{ mymember.lastname }}</h1>
-  
-  <p>Birth Day: {{ mymember.birth_date }}</p>
-  <p>Email: {{ mymember.email }}</p>
-  <p>Phone: {{ mymember.phone }}</p>
-  <p>Gender: {{ mymember.gender }}</p>
-  <p>Member since: {{ mymember.joined_date }}</p>
+    <p>Dorsal: {{ mymember.id }}</p>
+  <p>Fecha de Nacimiento: {{ mymember.birth_date }}</p>
+  <p>Correo Electronico: {{ mymember.email }}</p>
+  <p>Telefono: {{ mymember.phone }}</p>
+  <p>Genero: {{ mymember.gender }}</p>
+  <p>Miembro desde: {{ mymember.joined_date }}</p>
   
   <p>Volver a <a href="{% url 'members' %}">Miembros</a></p>
 
