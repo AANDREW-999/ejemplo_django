@@ -1,7 +1,7 @@
 {% extends "master.html" %}
 
 {% block title %}
-  Details about {{ mymember.firstname }} {{ mymember.lastname }}
+  Detalles de {{ mymember.firstname }} {{ mymember.lastname }}
 {% endblock %}
 
 
@@ -14,6 +14,6 @@
   <p>Gender: {{ mymember.gender }}</p>
   <p>Member since: {{ mymember.joined_date }}</p>
   
-  <p>Back to <a href="/members">Members</a></p>
-  
+  <p>Volver a <a href="{% url 'members' %}">Miembros</a></p>
+
 {% endblock %}

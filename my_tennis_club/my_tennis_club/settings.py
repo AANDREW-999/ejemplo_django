@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,7 +24,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-@k69(7if0-n8dk3oeyq4!4nu0tgmf$^j#j40w0--ji$xkca=b%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+# Ahora DEBUG se controla por variable de entorno DJANGO_DEBUG (por defecto True para desarrollo)
+DEBUG = os.getenv('DJANGO_DEBUG', 'True').lower() == 'true'
 
 ALLOWED_HOSTS = ["*"]
 
@@ -116,6 +118,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
+# Directorio de compilación (usar en producción con collectstatic)
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+# Si más adelante se añaden carpetas globales (ej: assets/) se pueden declarar aquí:
+# STATICFILES_DIRS = [ BASE_DIR / 'assets' ]
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field

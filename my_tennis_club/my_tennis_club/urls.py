@@ -21,3 +21,6 @@ urlpatterns = [
     path('', include('members.urls')),
     path('admin/', admin.site.urls),
 ]
+
+# Manejador de error 404 personalizado
+handler404 = 'members.views.custom_404'

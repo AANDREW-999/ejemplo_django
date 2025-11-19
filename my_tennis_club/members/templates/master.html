@@ -14,21 +14,21 @@
     body{font-family:'Montserrat',"Segoe UI",Roboto,Arial,sans-serif}
     h1,h2,h3,h4,h5,h6,.brand-text{font-family:'Barlow Condensed','Montserrat',sans-serif}
   </style>
+  {% block extra_head %}{% endblock %}
 </head>
 <body>
 <header class="site-header">
   <div class="top-strip"></div>
   <div class="nav-wrapper">
     <a class="logo" href="{% url 'members' %}">
-      <img src="{% static 'img/escudo.png' %}" alt="FC Barcelona" onerror="this.style.display='none'">
+      <img src="{% static 'img/escudo.png' %}" alt="FC Barcelona">
       <span class="brand-text">Club Members</span>
     </a>
     <nav class="main-nav">
       <ul>
-        <li><a href="{% url 'members' %}">Inicio</a></li>
-        <li><a href="#">Noticias</a></li>
-        <li><a href="#">Mi Perfil</a></li>
-        <li><a href="#">Miembros</a></li>
+        <li><a href="{% url 'main' %}">Inicio</a></li>
+        <li><a href="{% url 'members' %}">Miembros</a></li>
+        <li><a href="{% url 'django_guide' %}">Django</a></li>
         <li><a href="#">Contacto</a></li>
       </ul>
     </nav>
@@ -64,7 +64,7 @@
     </div>
   </div>
   <div class="legal">
-    <small>&copy; {{ now|date:"Y" }} Club. Todos los derechos reservados.</small>
+    <small>&copy; {% now "Y" %} Club. Todos los derechos reservados.</small>
   </div>
 </footer>
 <button class="scroll-top" aria-label="Subir">▲</button>
@@ -78,5 +78,6 @@ window.addEventListener('scroll',()=> {
 });
 st.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
 </script>
+{% block extra_js %}{% endblock %}
 </body>
 </html>

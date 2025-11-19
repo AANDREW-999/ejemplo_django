@@ -15,6 +15,8 @@ body{
   min-height:100vh;
   display:flex;
   flex-direction:column;
+  font-size:17px; /* aumentado desde el valor por defecto (~16) */
+  line-height:1.5;
 }
 a{color:var(--gold);text-decoration:none;}
 a:hover{text-decoration:underline;}
@@ -27,10 +29,13 @@ a:hover{text-decoration:underline;}
 }
 .logo{display:flex;align-items:center;gap:.65rem;font-weight:600;color:var(--gold);}
 .logo img{height:40px;width:auto;filter:drop-shadow(0 2px 4px rgba(0,0,0,.5));}
-.brand-text{letter-spacing:.5px;}
+.brand-text{
+  letter-spacing:.5px;
+  font-size:1.15rem;
+}
 .main-nav ul{list-style:none;display:flex;gap:1.1rem;margin: 0;padding: 0;}
 .main-nav a{
-  padding:.45rem .85rem;border-radius:var(--radius);font-weight:600;font-size:.9rem;
+  padding:.45rem .85rem;border-radius:var(--radius);font-weight:600;font-size:1rem;
   color:var(--light);position:relative;transition:.25s;
 }
 .main-nav a::after{
@@ -92,6 +97,20 @@ a:hover{text-decoration:underline;}
 }
 .scroll-top.show{opacity:1;pointer-events:auto;}
 .scroll-top:hover{background:linear-gradient(90deg,var(--grana),var(--gold));color:var(--light);}
+h1{font-size:2.4rem;letter-spacing:.5px;}
+h2{font-size:1.95rem;letter-spacing:.5px;}
+h3{font-size:1.55rem;}
+.motto{
+  font-family:'Barlow Condensed','Montserrat',sans-serif;
+  font-size:2rem;
+  font-weight:700;
+  letter-spacing:1px;
+  background:linear-gradient(90deg,var(--gold),var(--grana));
+  -webkit-background-clip:text;
+  color:transparent;
+  display:inline-block;
+  margin:.75rem 0 1.25rem;
+}
 @media (max-width:880px){
   .main-nav ul{flex-direction:column;gap:.35rem;}
   .main-nav{
@@ -101,6 +120,9 @@ a:hover{text-decoration:underline;}
   }
   .main-nav.open{transform:translateY(0);opacity:1;pointer-events:auto;}
   .nav-toggle{display:block;}
+  h1{font-size:2.1rem;}
+  h2{font-size:1.75rem;}
+  .motto{font-size:1.7rem;}
 }
 @media (prefers-color-scheme:light){
   body{background:linear-gradient(135deg,var(--light) 0%,#d9e1e8 100%);color:#222;}

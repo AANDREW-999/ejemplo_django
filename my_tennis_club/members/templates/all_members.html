@@ -1,19 +1,15 @@
 {% extends "master.html" %}
 
-{% block title %}
-  My Club Barcelona—List of all members
-{% endblock %}
-
+{% block title %}Miembros del Club{% endblock %}
 
 {% block content %}
-
-  <p><a href="/">HOME</a></p>
-
-  <h1>Members</h1>
-  
+  <span class="motto">Més que un club</span>
+  <h1>Miembros</h1>
   <ul>
     {% for x in mymembers %}
-      <li><a href="details/{{ x.id }}">{{ x.firstname }} {{ x.lastname }}</a></li>
+      <li><a href="{% url 'details' x.id %}">{{ x.firstname }} {{ x.lastname }}</a></li>
+    {% empty %}
+      <li>No hay miembros registrados.</li>
     {% endfor %}
   </ul>
 {% endblock %}
