@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1 style="color: blue">Call Variables from away</h1>
+{% for x in fruits %}
+  <h1>{{ x }}</h1>
+{% endfor %}
+
+<h1 style="color: blue">Create variable in Template a New Fruit</h1>
+{% with fruit="Mango" %}
+  <h1>{{ fruit }}</h1>
+{% endwith %}
+
+<h1 style="color: blue">Call Object Members from away</h1>
+<ul>
+  {% for x in mymembers %}
+    <li>{{ x.firstname }}</li>
+  {% endfor %}
+</ul>
+
+<h1 style="color: blue">Create Object Member in Template a New Member</h1>
+{% with firstname="Pipe" %}
+<h1>Hello {{ firstname }}, how are you?</h1>
+{% endwith %}
+
+{% lorem 50w %}
+
+{% lorem 5 p %}
+
+{% csrf_token %}
+
+<h1>{% now 'Y-m-d' %}</h1>
+
+<h1>{% now 'Y-m-d G:i:s' %}</h1>
+
+<!-- Sentencia IF -->
+<h1 style="color: blue;">If Statement</h1>
+
+
+  {% for miembro in mymembers %}
+    {% if miembro.firstname == "Lionel" %}
+        <h1>Hello Admin{{miembro.firstname}}</h1>
+    {% endif %}
+  {% endfor %}
+
+{% include 'black_friday.html' %}
+
+</body>
+</html>

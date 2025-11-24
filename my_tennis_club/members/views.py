@@ -1,6 +1,7 @@
 from django.http import HttpResponse
 from django.template import loader
 from django.shortcuts import render
+from django.db.models import Q
 from .models import Member
 
 def members(request):
@@ -32,3 +33,22 @@ def django_guide(request):
 def custom_404(request, exception):
   # 404.html extiende master.html para mantener diseño del club
   return render(request, '404.html', status=404)
+
+def testing(request):
+  mymembers = Member.objects.all().values()
+  column_firstname = Member.objects.all().values_list('firstname')
+  records_neymar = Member.objects.filter(firstname__icontains='Neymar').values()
+  records_neymar_lamine = Member.objects.filter(Q(firstname='Neymar') | Q(firstname='Lamine')).values()
+  endwith_s = Member.objects.filter(firstname__iendswith='s').values()
+  contain_ez = Member.objects.filter(lastname__icontains='ez').values()
+  template = loader.get_template('template.html')
+  context = {
+    'fruits': ['Apple', 'Banana', 'Cherry'],
+    'mymembers': mymembers,
+    'column_firstname': column_firstname,
+    'records_neymar': records_neymar,
+    'records_neymar_lamine': records_neymar_lamine,
+    'endwith_s': endwith_s,
+    'contain_ez': contain_ez,
+  }
+  return HttpResponse(template.render(context, request))
