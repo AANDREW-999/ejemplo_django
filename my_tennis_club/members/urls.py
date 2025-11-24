@@ -6,4 +6,5 @@ urlpatterns = [
     path('members/', views.members, name='members'),
     path('members/details/<int:id>', views.details, name='details'),
     path('django/', views.django_guide, name='django_guide'),
+    path('testing/', views.testing, name='testing'),
 ]
