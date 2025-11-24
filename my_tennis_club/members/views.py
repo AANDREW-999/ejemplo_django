@@ -41,6 +41,8 @@ def testing(request):
   records_neymar_lamine = Member.objects.filter(Q(firstname='Neymar') | Q(firstname='Lamine')).values()
   endwith_s = Member.objects.filter(firstname__iendswith='s').values()
   contain_ez = Member.objects.filter(lastname__icontains='ez').values()
+  order_by_firstname = Member.objects.all().order_by('firstname').values()
+  order_by_firstname_desc = Member.objects.all().order_by('-firstname').values()
   template = loader.get_template('template.html')
   context = {
     'fruits': ['Apple', 'Banana', 'Cherry'],
@@ -50,5 +52,7 @@ def testing(request):
     'records_neymar_lamine': records_neymar_lamine,
     'endwith_s': endwith_s,
     'contain_ez': contain_ez,
+    'order_by_firstname': order_by_firstname,
+    'order_by_firstname_desc': order_by_firstname_desc,
   }
   return HttpResponse(template.render(context, request))
