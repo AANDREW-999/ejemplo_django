@@ -50,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'my_tennis_club.urls'
@@ -117,9 +118,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
+STATIC_ROOT = BASE_DIR / 'productionfiles'
+
 STATIC_URL = 'static/'
-# Directorio de compilación (usar en producción con collectstatic)
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 # Si más adelante se añaden carpetas globales (ej: assets/) se pueden declarar aquí:
 # STATICFILES_DIRS = [ BASE_DIR / 'assets' ]
 

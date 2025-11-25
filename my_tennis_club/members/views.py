@@ -39,6 +39,7 @@ def testing(request):
   column_firstname = Member.objects.all().values_list('firstname')
   records_neymar = Member.objects.filter(firstname__icontains='Neymar').values()
   records_neymar_lamine = Member.objects.filter(Q(firstname='Neymar') | Q(firstname='Lamine')).values()
+  startwith_L = Member.objects.filter(firstname__startswith='L').values()
   endwith_s = Member.objects.filter(firstname__iendswith='s').values()
   contain_ez = Member.objects.filter(lastname__icontains='ez').values()
   order_by_firstname = Member.objects.all().order_by('firstname').values()
@@ -50,6 +51,7 @@ def testing(request):
     'column_firstname': column_firstname,
     'records_neymar': records_neymar,
     'records_neymar_lamine': records_neymar_lamine,
+    'startwith_L': startwith_L,
     'endwith_s': endwith_s,
     'contain_ez': contain_ez,
     'order_by_firstname': order_by_firstname,
