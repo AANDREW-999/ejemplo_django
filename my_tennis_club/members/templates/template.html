@@ -1,8 +1,22 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
-<link rel="stylesheet" href="{% static 'myglobal.css' %}">
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Template | My Tennis Club</title>
+  <link rel="stylesheet" href="{% static 'myglobal.css' %}">
+  <style>
+    /* Estilos suaves para mejor presentación (opcionales si ya existen en tu CSS) */
+    body { background: #f7f2ff; }
+    .container { max-width: 960px; margin: 0 auto; padding: 1rem; }
+    .card { background: #fff; border: 1px solid #ede7f6; border-radius: 12px; padding: 1rem; margin: 1rem 0; box-shadow: 0 4px 14px rgba(0,0,0,.06); }
+    .section-title { margin: .25rem 0 1rem; }
+    footer { margin: 2rem 0 1rem; text-align: center; opacity: .9; }
+  </style>
+</head>
 <body>
+  <div class="container">
 
 <h1 style="color: blue">Call Variables from away</h1>
 {% for x in fruits %}
@@ -48,5 +62,97 @@
 
 {% include 'black_friday.html' %}
 
+<!-- Sección Queryset -->
+<section>
+  <h1 class="section-title" style="color: purple;">Queryset</h1>
+  <ul>
+    <li>
+      <strong>column_firstname</strong>
+      <ul>
+        {% for obj in column_firstname %}
+          <li>{{ obj.firstname|default:obj }}</li>
+        {% empty %}
+          <li>Sin resultados</li>
+        {% endfor %}
+      </ul>
+    </li>
+    <li>
+      <strong>records_neymar</strong>
+      <ul>
+        {% for obj in records_neymar %}
+          <li>{{ obj.firstname|default:obj }}</li>
+        {% empty %}
+          <li>Sin resultados</li>
+        {% endfor %}
+      </ul>
+    </li>
+    <li>
+      <strong>records_neymar_lamine</strong>
+      <ul>
+        {% for obj in records_neymar_lamine %}
+          <li>{{ obj.firstname|default:obj }}</li>
+        {% empty %}
+          <li>Sin resultados</li>
+        {% endfor %}
+      </ul>
+    </li>
+    <li>
+      <strong>startwith_L</strong>
+      <ul>
+        {% for obj in startwith_L %}
+          <li>{{ obj.firstname|default:obj }}</li>
+        {% empty %}
+          <li>Sin resultados</li>
+        {% endfor %}
+      </ul>
+    </li>
+    <li>
+      <strong>endwith_s</strong>
+      <ul>
+        {% for obj in endwith_s %}
+          <li>{{ obj.firstname|default:obj }}</li>
+        {% empty %}
+          <li>Sin resultados</li>
+        {% endfor %}
+      </ul>
+    </li>
+    <li>
+      <strong>contain_ez</strong>
+      <ul>
+        {% for obj in contain_ez %}
+          <li>{{ obj.firstname|default:obj }}</li>
+        {% empty %}
+          <li>Sin resultados</li>
+        {% endfor %}
+      </ul>
+    </li>
+    <li>
+      <strong>order_by_firstname</strong>
+      <ul>
+        {% for obj in order_by_firstname %}
+          <li>{{ obj.firstname|default:obj }}</li>
+        {% empty %}
+          <li>Sin resultados</li>
+        {% endfor %}
+      </ul>
+    </li>
+    <li>
+      <strong>order_by_firstname_desc</strong>
+      <ul>
+        {% for obj in order_by_firstname_desc %}
+          <li>{{ obj.firstname|default:obj }}</li>
+        {% empty %}
+          <li>Sin resultados</li>
+        {% endfor %}
+      </ul>
+    </li>
+  </ul>
+</section>
+
+    <!-- Footer con la imagen del Camp Nou -->
+    <footer>
+      <img src="{% static 'img/campnou.png' %}" alt="Camp Nou" style="max-width: 800px; width: 100%; height: auto; border-radius: 10px; box-shadow: 0 6px 18px rgba(0,0,0,.12);">
+    </footer>
+  </div>
 </body>
 </html>
