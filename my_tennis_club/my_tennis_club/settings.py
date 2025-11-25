@@ -122,6 +122,10 @@ STATIC_ROOT = BASE_DIR / 'productionfiles'
 
 STATIC_URL = 'static/'
 
+#Add this in your settings.py file:
+STATICFILES_DIRS = [
+    BASE_DIR / 'mystaticfiles'
+]
 # Si más adelante se añaden carpetas globales (ej: assets/) se pueden declarar aquí:
 # STATICFILES_DIRS = [ BASE_DIR / 'assets' ]
 

@@ -12,7 +12,7 @@ env/
 .vscode/
 .idea/
 # Static collected
-staticfiles/
+productionfiles/
 # Migrations cache
 */migrations/__pycache__/
 # Coverage / tests
